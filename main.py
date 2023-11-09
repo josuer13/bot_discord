@@ -16,17 +16,33 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    if message.content.startswith('$hello'):
+    if message.content.startswith('/hello'):
         await message.channel.send("Hola!")  
-    elif message.content.startswith('$pass'):
+    elif message.content.startswith('/pass'):
         await message.channel.send(tools.gen_pass(10))
-    elif message.content.startswith('$coin'):
+    elif message.content.startswith('/coin'):
         await message.channel.send(tools.coin())  
-    elif message.content.startswith('$emoji'):
-        await message.channel.send(tools.emoji())        
-    elif message.content.startswith('$bye'):
+    elif message.content.startswith('/emoji'):
+        await message.channel.send(tools.emoji())   
+    elif message.content.startswith('/help'):
+        await message.channel.send(tools.help())
+    elif message.content.startswith('/number'):
+        await message.channel.send(tools.randint())
+    elif message.content.startswith('/math_easy'):
+        await message.channel.send(tools.maths_easy())
+    elif message.content.startswith('/math_medium'):
+        await message.channel.send(tools.maths_medium())
+    elif message.content.startswith('/math_hard'):
+        await message.channel.send(tools.maths_hard())
+    elif message.content.startswith('/math_x_easy'):
+        await message.channel.send(tools.maths_multiplication_easy())
+    elif message.content.startswith('/math_x_medium'):
+        await message.channel.send(tools.maths_multiplication_medium())
+    elif message.content.startswith('/math_x_hard'):
+        await message.channel.send(tools.maths_multiplication_hard())   
+    elif message.content.startswith('/bye'):
         await message.channel.send("\U0001f642")
     else:
         await message.channel.send(message.content)
 
-client.run("")
+client.run(" ")
