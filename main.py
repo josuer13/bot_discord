@@ -42,7 +42,13 @@ async def on_message(message):
         await message.channel.send(tools.maths_multiplication_hard())   
     elif message.content.startswith('/bye'):
         await message.channel.send("\U0001f642")
+    elif message.content.startswith('/duck'):
+        await tools.duck(message.channel) 
+    elif message.content.startswith('/pokemon'):
+        await tools.pokemon(message)
+    elif message.content.startswith("/meme"):
+        await tools.mem(message.channel)
     else:
         await message.channel.send(message.content)
 
-client.run(" ")
+client.run("token here")
